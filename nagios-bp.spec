@@ -2,12 +2,13 @@
 Summary:	Nagios Business Process AddOns
 Name:		nagios-bp
 Version:	0.9.6
-Release:	0.5
+Release:	0.6
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://bp-addon.monitoringexchange.org/download/nagios-business-process-addon-%{version}.tar.gz
 # Source0-md5:	8b88a1729f6c6324e410a285e1a493fd
 Patch0:		DESTDIR.patch
+Patch1:		paths.patch
 URL:		http://bp-addon.monitoringexchange.org/
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	nagios-cgi
@@ -41,6 +42,7 @@ like and look, how this would impact Your applications.
 %prep
 %setup -q -n nagios-business-process-addon-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %configure \
@@ -89,8 +91,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc API-DOC AUTHORS CHANGES INSTALL README UPDATE
 %dir %attr(750,root,http) %{_sysconfdir}
-%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*.cfg
-%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*.conf
+%attr(640,root,http) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*.cfg
+%attr(640,root,http) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*.conf
 
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/cron.d/nagiosbp
 %attr(755,root,root) %{cgidir}/nagios-bp.cgi

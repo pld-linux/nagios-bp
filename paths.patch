@@ -1,0 +1,11 @@
+--- nagios-business-process-addon-0.9.6/./sbin/nagios-bp.cgi.in~	2010-09-29 19:56:10.000000000 +0300
++++ nagios-business-process-addon-0.9.6/./sbin/nagios-bp.cgi.in	2012-01-08 17:42:50.327392962 +0200
+@@ -55,7 +55,7 @@
+ 	my $rowcount = 0;
+ 	my $session_dir = $settings->{'NAGIOSBP_VAR'} . "/nagios_bp.sessions";
+ 	my $new_session = 0;
+-	my $cgi_cfg_file = $settings->{'NAGIOS_ETC'} . "/cgi.cfg";
++	my $cgi_cfg_file = "/etc/webapps/nagios/cgi.cfg";
+ 	my $default_language = "de";
+ 	my $cgi_simple = new CGI::Simple;       #Instance of CGI simple
+         my $query = new CGI;                    #Instance of CGI module
