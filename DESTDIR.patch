@@ -1,0 +1,83 @@
+--- nagios-business-process-addon-0.9.6/share/lang/Makefile.in~	2010-09-29 19:56:08.000000000 +0300
++++ nagios-business-process-addon-0.9.6/share/lang/Makefile.in	2012-01-08 10:23:16.778036737 +0200
+@@ -22,6 +22,6 @@
+ devclean: distclean
+ 
+ install:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DATADIR)/lang
++	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(DATADIR)/lang
+ 	for file in ./*.txt; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DATADIR)/lang; done
++	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(DATADIR)/lang; done
+--- nagios-business-process-addon-0.9.6/libexec/Makefile.in~	2010-09-29 19:56:08.000000000 +0300
++++ nagios-business-process-addon-0.9.6/libexec/Makefile.in	2012-01-08 10:26:10.358698524 +0200
+@@ -23,6 +23,6 @@
+ devclean: distclean
+ 
+ install:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(LIBEXECDIR)
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) check_bp_status.pl $(LIBEXECDIR)
++	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBEXECDIR)
++	$(INSTALL) -m 755 $(INSTALL_OPTS) check_bp_status.pl $(DESTDIR)$(LIBEXECDIR)
+ 
+--- nagios-business-process-addon-0.9.6/share/Makefile.in~	2010-09-29 19:56:08.000000000 +0300
++++ nagios-business-process-addon-0.9.6/share/Makefile.in	2012-01-08 10:28:03.650148217 +0200
+@@ -22,7 +22,7 @@
+ devclean: distclean
+ 
+ install:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DATADIR)
++	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(DATADIR)
+ 	for file in ./*.gif; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DATADIR); done
+-	
++	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(DATADIR); done
++
+--- nagios-business-process-addon-0.9.6/share/stylesheets/Makefile.in~	2010-09-29 19:56:08.000000000 +0300
++++ nagios-business-process-addon-0.9.6/share/stylesheets/Makefile.in	2012-01-08 10:29:29.633778307 +0200
+@@ -23,7 +23,7 @@
+ devclean: distclean
+ 
+ install:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DATADIR)/stylesheets
++	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(DATADIR)/stylesheets
+ 	for file in ./*.css; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DATADIR)/stylesheets; done
+-	${TOUCH} $(DATADIR)/stylesheets/user.css
++	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(DATADIR)/stylesheets; done
++	${TOUCH} $(DESTDIR)$(DATADIR)/stylesheets/user.css
+--- nagios-business-process-addon-0.9.6/var/nagios_bp.sessions/Makefile.in~	2010-09-29 19:56:08.000000000 +0300
++++ nagios-business-process-addon-0.9.6/var/nagios_bp.sessions/Makefile.in	2012-01-08 10:30:25.656143469 +0200
+@@ -22,6 +22,6 @@
+ devclean: distclean
+ 
+ install:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(LOGDIR)
+-	$(INSTALL) -m 1777 $(INSTALL_OPTS) -d $(LOGDIR)/nagios_bp.sessions
++	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)
++	$(INSTALL) -m 1777 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/nagios_bp.sessions
+ 
+--- nagios-business-process-addon-0.9.6/var/cache/Makefile.in~	2010-09-29 19:56:08.000000000 +0300
++++ nagios-business-process-addon-0.9.6/var/cache/Makefile.in	2012-01-08 10:31:00.297605961 +0200
+@@ -22,6 +22,6 @@
+ devclean: distclean
+ 
+ install:
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(LOGDIR)/cache
+-	$(INSTALL) -m 666 $(INSTALL_OPTS) ndo_backend_cache $(LOGDIR)/cache/
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/cache
++	$(INSTALL) -m 666 $(INSTALL_OPTS) ndo_backend_cache $(DESTDIR)$(LOGDIR)/cache/
+ 
+--- nagios-business-process-addon-0.9.6/bin/Makefile.in~	2010-09-29 19:56:08.000000000 +0300
++++ nagios-business-process-addon-0.9.6/bin/Makefile.in	2012-01-08 10:31:37.249165978 +0200
+@@ -24,7 +24,7 @@
+ devclean: distclean
+ 
+ install:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(BINDIR)
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) *.pl $(BINDIR)
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) nagios_bp_session_timeout $(BINDIR)
++	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 755 $(INSTALL_OPTS) *.pl $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 755 $(INSTALL_OPTS) nagios_bp_session_timeout $(DESTDIR)$(BINDIR)
+ 
