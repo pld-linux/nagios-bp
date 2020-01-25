@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.perl
 Summary:	Nagios Business Process AddOns
 Name:		nagios-bp
 Version:	0.9.6
