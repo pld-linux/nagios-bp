@@ -40,8 +40,8 @@ like and look, how this would impact Your applications.
 
 %prep
 %setup -q -n nagios-business-process-addon-%{version}
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
 %configure \
